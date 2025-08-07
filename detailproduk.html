@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Detail Produk - SecondStyle</title>
+    <link href="src/output.css" rel="stylesheet" />
+</head>
+
+
+
+<body class="bg-[#e8f7f6] font-serif">
+
+    <!-- Notifikasi (Pindahkan ke dalam body) -->
+    <div id="cart-notification"
+        class="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded shadow-lg hidden z-50">
+        Barang ditambahkan ke keranjang!
+    </div>
+
+    <header class="bg-[#d4f3ef] flex items-center justify-between px-6 py-3 shadow-sm">
+        <div class="flex items-center space-x-4">
+            <img src="img/second.png" alt="SecondStyle Logo" class="h-10" />
+            <nav class="hidden md:flex space-x-4 font-semibold">
+                <a href="index.html" class="hover:text-black">Home</a>
+                <a href="aboutus.html" class="hover:text-black">About us</a>
+                <a href="homepage.html" class="hover:text-black">Shop</a>
+            </nav>
+        </div>
+        <div class="flex items-center space-x-4">
+            <input type="text" placeholder="Search for items"
+                class="pl-10 pr-4 py-1 rounded-full border border-gray-300 text-sm" />
+                <a href="profile.html">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 12a5 5 0 100-10 5 5 0 000 10zM2 18a8 8 0 0116 0H2z" />
+            </svg>
+        </a>
+
+            <!-- Cart Icon + Count -->
+            <div class="relative">
+                <a href="cart.html">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M10 21a1 1 0 100-2 1 1 0 000 2zm6 0a1 1 0 100-2 1 1 0 000 2z" />
+                </svg>
+            </a>
+                <span id="cart-count"
+                    class="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+            </div>
+        </div>
+    </header>  
+
+
+    <main class="max-w-4xl mx-auto mt-8 px-4">
+        <div class="grid md:grid-cols-2 gap-8">
+            <div>
+                <img id="main-image" class="w-full rounded-lg" src="" alt="Product Image" />
+                <div class="grid grid-cols-4 gap-2 mt-4" id="thumbnails"></div>
+            </div>
+            <div>
+                <h1 id="product-title" class="text-2xl font-semibold"></h1>
+                <div class="mt-4">
+                    <p class="text-sm uppercase">Warna</p>
+                    <div class="text-lg font-bold" id="product-color">BLACK</div>
+                </div>
+                <div class="mt-4">
+                    <p class="text-sm font-medium">Ukuran</p>
+                    <div class="flex space-x-2 mt-1">
+                        <button class="border rounded px-2 py-1">S</button>
+                        <button class="border rounded px-2 py-1">M</button>
+                        <button class="border rounded px-2 py-1">L</button>
+                        <button class="border rounded px-2 py-1">XL</button>
+                        <button class="border rounded px-2 py-1">XXL</button>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <p class="text-sm font-medium">Quantity</p>
+                    <input type="number" value="1" min="1" class="w-16 border rounded px-2 py-1" />
+                </div>
+                <div class="mt-4">
+                    <button id="add-to-cart" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 w-full">
+                        ADD TO CART
+                    </button>                      
+                    <button class="mt-2 bg-black text-white px-4 py-2 rounded hover:bg-gray-900 w-full">BUY IT
+                        NOW</button>
+                </div>
+                <div class="mt-6">
+                    <h2 class="font-bold mb-2">Deskripsi Produk</h2>
+                    <p id="product-description" class="text-sm leading-relaxed text-justify"></p>
+                </div>
+            </div>
+        </div>
+
+
+        <section class="mt-10">
+            <h2 class="font-bold mb-2">Size Chart</h2>
+            <ul class="text-sm list-disc ml-6">
+                <li>S: Dada 52 cm, Tinggi Belakang 64 cm, Lengan 57 cm</li>
+                <li>M: Dada 54 cm, Tinggi Belakang 66 cm, Lengan 59 cm</li>
+                <li>L: Dada 56 cm, Tinggi Belakang 68 cm, Lengan 61 cm</li>
+                <li>XL: Dada 58 cm, Tinggi Belakang 70 cm, Lengan 63 cm</li>
+                <li>XXL: Dada 60 cm, Tinggi Belakang 72 cm, Lengan 65 cm</li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
