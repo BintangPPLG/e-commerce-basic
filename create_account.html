@@ -1,93 +1,123 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create Account - SecondStyle</title>
-    <link href="src/output.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Profile — SecondStyle Archive</title>
+  <meta name="description" content="Register your SecondStyle member account to access exclusive preloved drops.">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+<body>
 
-<body class="bg-[#E6F6F5] font-sans text-black">
+  <!-- Floating Luxury Navigation -->
+  <div class="nav-wrapper">
+    <header class="floating-nav">
+      <a href="index.html" class="nav-brand">
+        Second<span>Style</span>
+      </a>
 
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="homepage.html" class="nav-link">Shop Archive</a></li>
+          <li><a href="aboutus.html" class="nav-link">Our Story</a></li>
+        </ul>
+      </nav>
 
-    <header class="flex justify-between items-center px-6 py-4">
-
-        <h1 class="text-2xl font-bold text-blue-800">
-            <span class="text-black">Second</span><span class="text-red-500">Style</span>
-        </h1>
-
-
-        <nav class="flex items-center space-x-6 font-semibold">
-            <a href="index.html" class="hover:underline">Home</a>
-            <a href="aboutus.html" class="hover:underline">About Us</a>
-            <a href="create_account.html" class="hover:underline">Shop</a>
-            <i class="fas fa-cog"></i>
-            <i class="fas fa-shopping-cart"></i>
-        </nav>
+      <a href="login.html" class="btn-secondary" style="font-size: 11px; padding: 6px 14px; min-height: 32px;">
+        Sign In
+      </a>
     </header>
+  </div>
 
+  <main class="section-spacing" style="padding-top: 48px; min-height: 80vh; display: flex; align-items: center; justify-content: center;">
+    <div class="container" style="max-width: 480px;">
+      
+      <div class="bezel-card" style="padding: 6px;">
+        <div class="bezel-card-inner" style="padding: 36px 32px; text-align: center;">
+          
+          <span class="pill-tag" style="margin-bottom: 12px;">New Membership</span>
+          <h1 style="font-size: 1.8rem; font-weight: 300; margin-bottom: 8px;">Create Account</h1>
+          <p style="font-size: 13.5px; color: var(--text-secondary); margin-bottom: 28px;">
+            Join the circular archive circle for early access and priority dispatch.
+          </p>
 
-    <main class="flex flex-col items-center justify-center min-h-[70vh] px-4">
-        <h2 class="text-2xl font-semibold mb-2">CREATE ACCOUNT</h2>
-        <div class="w-12 h-1 bg-black mb-6"></div>
+          <form onsubmit="handleRegisterSubmit(event)" style="text-align: left;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+              <div class="form-group">
+                <label class="form-label" for="reg-first-name">First Name</label>
+                <input type="text" id="reg-first-name" required class="form-input" placeholder="Narendra">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="reg-last-name">Last Name</label>
+                <input type="text" id="reg-last-name" required class="form-input" placeholder="Bintang">
+              </div>
+            </div>
 
-        <form action="login.html" method="GET" class="w-full max-w-sm space-y-4 text-center">
-            <input type="text" placeholder="First Name" required
-                class="w-full px-4 py-3 rounded bg-gray-300 placeholder-gray-600 focus:outline-none" />
-            <input type="text" placeholder="Last Name" required
-                class="w-full px-4 py-3 rounded bg-gray-300 placeholder-gray-600 focus:outline-none" />
-            <input type="email" placeholder="Email" required
-                class="w-full px-4 py-3 rounded bg-gray-300 placeholder-gray-600 focus:outline-none" />
-            <input type="password" placeholder="Password" required
-                class="w-full px-4 py-3 rounded bg-gray-300 placeholder-gray-600 focus:outline-none" />
-            <button type="submit"
-                class="w-full bg-black text-white py-3 rounded shadow hover:bg-gray-800 transition font-semibold">
-                Create
+            <div class="form-group">
+              <label class="form-label" for="reg-email">Email Address</label>
+              <input type="email" id="reg-email" required class="form-input" placeholder="bintang@example.com">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-password">Create Password</label>
+              <input type="password" id="reg-password" required minlength="8" class="form-input" placeholder="Minimum 8 characters">
+            </div>
+
+            <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 24px;">
+              <input type="checkbox" id="accept-terms" required style="margin-top: 3px; accent-color: var(--accent-gold); cursor: pointer;">
+              <label for="accept-terms" style="font-size: 12.5px; line-height: 1.5; color: var(--text-secondary); cursor: pointer;">
+                I agree to the SecondStyle circular terms, authenticity protocol, and privacy charter.
+              </label>
+            </div>
+
+            <button type="submit" class="btn-luxury" style="width: 100%; justify-content: center; gap: 12px;">
+              <span>Register Account</span>
+              <span class="btn-icon">&rarr;</span>
             </button>
-        </form>
+          </form>
 
-        <div class="mt-6 space-y-1 text-sm text-center font-medium">
-            <a href="index.html" class="block hover:underline">Return To Home</a>
+          <div style="margin-top: 24px; font-size: 13px; color: var(--text-secondary); border-top: 1px solid var(--border-subtle); padding-top: 20px;">
+            Already have an account?
+            <a href="login.html" style="color: var(--text-primary); text-decoration: underline; font-weight: 400; margin-left: 4px;">
+              Sign In Here
+            </a>
+          </div>
+
         </div>
-    </main>
+      </div>
 
+    </div>
+  </main>
 
-    <footer class="bg-white border-t mt-10 py-6 px-4 text-sm text-black">
-        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+  <!-- Editorial Footer -->
+  <footer style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); padding: 36px 0 20px 0;">
+    <div class="container" style="text-align: center; font-size: 12px; color: var(--text-muted);">
+      &copy; 2026 SecondStyle Archive. Encrypted authentication.
+    </div>
+  </footer>
 
-            <div class="space-y-2">
-                <p>Contact Us</p>
-                <p>Size Guide</p>
-                <p>How To Shop</p>
-                <p>FAQ</p>
-                <p>Return Policy</p>
-            </div>
+  <!-- Scripts -->
+  <script src="js/store.js"></script>
+  <script>
+    function handleRegisterSubmit(e) {
+      e.preventDefault();
+      const first = document.getElementById('reg-first-name').value.trim();
+      const last = document.getElementById('reg-last-name').value.trim();
+      const email = document.getElementById('reg-email').value.trim();
 
-            <div class="space-y-2">
-                <p>Terms & Condition</p>
-                <p>Terms Of Service</p>
-                <p>Refund Policy</p>
-                <p>Order Confirmation</p>
-            </div>
+      const fullName = `${first} ${last}`.trim();
+      window.SecondStyleStore.updateCurrentUser({
+        name: fullName,
+        email: email,
+        isLoggedIn: true
+      });
 
-            <div class="space-y-2">
-                <p>📱 Whatsapp</p>
-                <p>📷 Instagram</p>
-                <p>✈️ Telegram</p>
-                <p>🎵 Tiktok</p>
-            </div>
-
-            <div class="flex flex-col items-center justify-center">
-                <p class="text-center">&copy; 2025, SecondStyle / <span class="underline">Daily Wear</span></p>
-                <img src="img/second.png" alt="SecondStyle" class="w-24 mt-2">
-            </div>
-        </div>
-    </footer>
-
-
-    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
-
+      window.SecondStyleStore.showToast('Profile Registered', `Welcome to the Archive Circle, ${first}.`);
+      setTimeout(() => {
+        window.location.href = 'profile.html';
+      }, 700);
+    }
+  </script>
 </body>
-
 </html>
