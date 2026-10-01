@@ -1,119 +1,461 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SecondStyle - Homepage</title>
-    <link href="src/output.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Archive — SecondStyle</title>
+  <meta name="description" content="Explore SecondStyle's authenticated preloved luxury and vintage fashion pieces.">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+<body>
 
-<body class="bg-[#d4f3ef] font-sans text-gray-800">
+  <!-- Floating Luxury Navigation -->
+  <div class="nav-wrapper">
+    <header class="floating-nav">
+      <a href="index.html" class="nav-brand">
+        Second<span>Style</span>
+      </a>
 
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="homepage.html" class="nav-link active">Shop Archive</a></li>
+          <li><a href="aboutus.html" class="nav-link">Our Story</a></li>
+          <li><a href="profile.html" class="nav-link">Dashboard</a></li>
+        </ul>
+      </nav>
 
-    <header class="bg-[#d4f3ef] flex items-center justify-between px-6 py-3 shadow-sm">
-        <div class="flex items-center space-x-4">
-            <img src="img/second.png" alt="SecondStyle Logo" class="h-10" />
-            <nav class="hidden md:flex space-x-4 font-semibold">
-                <a href="index.html" class="hover:text-black">Home</a>
-                <a href="aboutus.html" class="hover:text-black">About us</a>
-                <a href="homepage.html" class="hover:text-black">Shop</a>
-            </nav>
-        </div>
-        <div class="flex items-center space-x-4">
-            <div class="relative">
-                <input id="search-input" type="text" placeholder="Search for items"
-                    class="pl-10 pr-4 py-1 rounded-full border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-black" />
-                <svg class="w-4 h-4 absolute left-3 top-2.5 text-gray-400" xmlns="http://www.w3.org/2000/svg"
-                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-            </div>
-
-
-            <div class="relative">
-                <button onclick="toggleCart()" class="relative">
-                    <a href="cart.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-700 hover:text-blue-600"
-                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.4 5m0 0a1 1 0 102 0m-2 0H17a1 1 0 100-2H6.6" />
-                    </svg>
-                </a>
-                    <span id="cart-count"
-                        class="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">0</span>
-                </button>
-
-                <div id="cart-dropdown"
-                    class="hidden absolute right-0 mt-2 w-64 bg-white shadow-lg border rounded-lg z-50 p-4 text-sm">
-                    <h4 class="font-semibold mb-2">Cart Items</h4>
-                    <ul id="cart-items" class="space-y-2"></ul>
-                    <button onclick="clearCart()"
-                        class="mt-2 w-full bg-red-500 text-white py-1 rounded hover:bg-red-600">Clear Cart</button>
-                </div>
-            </div>
-
-
-             <a href="profile.html">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 12a5 5 0 100-10 5 5 0 000 10zM2 18a8 8 0 0116 0H2z" />
-            </svg>
+      <div class="nav-actions">
+        <a href="profile.html" class="icon-btn" aria-label="Account profile">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle>
+          </svg>
         </a>
-        </div>
+
+        <a href="cart.html" class="icon-btn" aria-label="Shopping Cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" id="cart-count">0</span>
+        </a>
+      </div>
     </header>
+  </div>
 
+  <!-- Main Catalog -->
+  <main class="section-spacing" style="padding-top: 40px;">
+    <div class="container">
+      
+      <!-- Catalog Editorial Header -->
+      <div style="text-align: center; max-width: 650px; margin: 0 auto 40px auto;">
+        <span class="pill-tag" style="margin-bottom: 12px;">Curated Collection</span>
+        <h1 style="font-weight: 300; margin-bottom: 12px;">The Complete Archive</h1>
+        <p style="font-size: 15px;">Discover authenticated one-of-a-kind preloved apparel, outerwear, and circular fashion garments.</p>
+      </div>
 
-    <section class="text-center py-8">
-        <h1 class="text-2xl font-bold">SHOP THE LATEST RELEASES</h1>
-    </section>
+      <!-- Filter and Search Toolbar -->
+      <div class="bezel-card" style="margin-bottom: 40px; padding: 6px;">
+        <div class="bezel-card-inner" style="padding: 16px 20px; display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center;">
+          
+          <!-- Category Pills -->
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;" id="category-pills">
+            <button class="pill-tag active-category" data-category="all" style="cursor: pointer; background: var(--bg-dark); color: #ffffff; border-color: transparent;">All Pieces</button>
+            <button class="pill-tag" data-category="hoodie" style="cursor: pointer; background: transparent; color: var(--text-secondary);">Hoodies & Sweats</button>
+            <button class="pill-tag" data-category="jacket" style="cursor: pointer; background: transparent; color: var(--text-secondary);">Outerwear</button>
+            <button class="pill-tag" data-category="tee" style="cursor: pointer; background: transparent; color: var(--text-secondary);">Vintage Tees</button>
+            <button class="pill-tag" data-category="pants" style="cursor: pointer; background: transparent; color: var(--text-secondary);">Bottoms</button>
+          </div>
 
+          <!-- Search & Sort Controls -->
+          <div style="display: flex; gap: 12px; align-items: center; flex-grow: 1; justify-content: flex-end; min-width: 280px;">
+            <div style="position: relative; width: 100%; max-width: 260px;">
+              <input type="text" id="catalog-search" placeholder="Search archive..." class="form-input" style="padding: 8px 14px 8px 36px; font-size: 13px; border-radius: var(--radius-pill);">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted);">
+                <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </div>
 
-    <section class="mt-12 px-4 max-w-6xl mx-auto">
-        <h2 class="text-xl font-bold mb-6">Other Recommendations</h2>
-        <div id="fakestore-products" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            <select id="catalog-sort" class="form-select" style="width: auto; padding: 8px 16px; font-size: 13px; border-radius: var(--radius-pill); cursor: pointer;">
+              <option value="featured">Featured</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+            </select>
+          </div>
 
         </div>
-    </section>
+      </div>
 
+      <!-- Live Results Counter -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; font-size: 13px; color: var(--text-muted);">
+        <span id="product-count-label">Displaying items</span>
+        <span style="display: flex; align-items: center; gap: 6px;">
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent-emerald);"></span>
+          Live Synchronized
+        </span>
+      </div>
 
-    <footer class="bg-white text-sm text-gray-700 mt-10 border-t pt-6 pb-4">
-        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 px-4">
-            <div>
-                <h3 class="font-semibold mb-2">Contact Us</h3>
-                <ul class="space-y-1">
-                    <li>Site Guide</li>
-                    <li>How To Shop</li>
-                    <li>FAQ</li>
-                    <li>Privacy Policy</li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="font-semibold mb-2">Legal</h3>
-                <ul class="space-y-1">
-                    <li>Terms & Conditions</li>
-                    <li>Return Policy</li>
-                    <li>Order Certification</li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="font-semibold mb-2">Follow Us</h3>
-                <ul class="space-y-1">
-                    <li>Whatsapp</li>
-                    <li>Instagram</li>
-                    <li>Telegram</li>
-                    <li>Tiktok</li>
-                </ul>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="logo.png" alt="SecondStyle" class="w-24 mb-2" />
-                <p class="text-center text-gray-500">&copy; 2025, SecondStyle / Daily Wear</p>
-            </div>
+      <!-- Product Catalog Grid -->
+      <div id="catalog-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 28px;">
+        <!-- Loading skeletons injected here by default -->
+        <div class="skeleton" style="height: 380px;"></div>
+        <div class="skeleton" style="height: 380px;"></div>
+        <div class="skeleton" style="height: 380px;"></div>
+        <div class="skeleton" style="height: 380px;"></div>
+      </div>
+
+      <!-- Empty State View -->
+      <div id="catalog-empty-state" style="display: none; text-align: center; padding: 64px 20px;">
+        <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--bg-elevated); border: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; color: var(--text-muted);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </div>
-    </footer>
+        <h3 style="font-weight: 400; margin-bottom: 8px;">No matching pieces found</h3>
+        <p style="font-size: 14px; margin-bottom: 24px;">Try adjusting your keyword or reset category filter.</p>
+        <button id="reset-filters-btn" class="btn-secondary" style="font-size: 12px; padding: 10px 24px;">Reset All Filters</button>
+      </div>
 
+    </div>
+  </main>
 
-    <script src="script.js"></script>
+  <!-- Quick View Modal -->
+  <div class="modal-backdrop" id="quick-view-modal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeQuickView()" aria-label="Close modal">&times;</button>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; align-items: center;">
+        <div style="background: var(--bg-elevated); padding: 24px; border-radius: var(--radius-inner); text-align: center;">
+          <img id="qv-image" src="" alt="Garment preview" style="max-height: 280px; width: 100%; object-fit: contain; margin: 0 auto;">
+        </div>
+        <div>
+          <span class="pill-tag" id="qv-category" style="margin-bottom: 10px;">Archive</span>
+          <h2 id="qv-title" style="font-size: 1.4rem; font-weight: 400; margin-bottom: 8px;">Garment Title</h2>
+          <div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 16px;">
+            <span id="qv-price" style="font-size: 1.25rem; font-weight: 400; color: var(--text-primary);">Rp 0</span>
+            <span id="qv-orig-price" style="font-size: 14px; text-decoration: line-through; color: var(--text-muted);">Rp 0</span>
+          </div>
+          <p id="qv-desc" style="font-size: 13.5px; line-height: 1.7; margin-bottom: 20px; color: var(--text-secondary);">
+            Authenticated preloved luxury garment. Inspected and conditioned for superior comfort and timeless style.
+          </p>
+          
+          <div style="margin-bottom: 24px;">
+            <label class="form-label" style="display: block; margin-bottom: 8px;">Select Size</label>
+            <div style="display: flex; gap: 8px;" id="qv-size-selector">
+              <button class="size-btn pill-tag active" data-size="S" style="cursor: pointer; padding: 6px 14px;">S</button>
+              <button class="size-btn pill-tag" data-size="M" style="cursor: pointer; padding: 6px 14px;">M</button>
+              <button class="size-btn pill-tag" data-size="L" style="cursor: pointer; padding: 6px 14px;">L</button>
+              <button class="size-btn pill-tag" data-size="XL" style="cursor: pointer; padding: 6px 14px;">XL</button>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 12px;">
+            <button id="qv-add-btn" class="btn-luxury" style="flex: 1;">
+              <span>Add to Bag</span>
+              <span class="btn-icon">+</span>
+            </button>
+            <a id="qv-detail-link" href="#" class="btn-secondary" style="font-size: 12px;">
+              Full Details
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Editorial Footer -->
+  <footer style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); padding: 56px 0 28px 0; margin-top: 60px;">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+        <div class="nav-brand">Second<span>Style</span></div>
+        <div style="font-size: 13px; color: var(--text-muted);">&copy; 2026 SecondStyle Archive. Verified preloved luxury.</div>
+        <div style="display: flex; gap: 16px; font-size: 13px;">
+          <a href="index.html" class="nav-link" style="padding: 0;">Home</a>
+          <a href="aboutus.html" class="nav-link" style="padding: 0;">Philosophy</a>
+          <a href="cart.html" class="nav-link" style="padding: 0;">Bag</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/store.js"></script>
+  <script>
+    // Local High-End Curated Items
+    const LOCAL_ARCHIVE = [
+      {
+        id: 1,
+        title: "Heavyweight Boxy Zipper Hoodie",
+        category: "hoodie",
+        price: 262500,
+        originalPrice: 350000,
+        image: "img/hood.jpg",
+        description: "Custom milled 480GSM loopback cotton fleece. Boxy drop-shoulder cut with brushed antique silver dual-zipper hardware."
+      },
+      {
+        id: 2,
+        title: "Minimalist Typography Graphic Tee",
+        category: "tee",
+        price: 185000,
+        originalPrice: 245000,
+        image: "img/lets.png",
+        description: "Vintage single-stitch washed cotton jersey. Features understated front typography and garment-dyed faded charcoal hue."
+      },
+      {
+        id: 3,
+        title: "Oversized Utility Work Jacket",
+        category: "jacket",
+        price: 385000,
+        originalPrice: 510000,
+        image: "img/buyit.png",
+        description: "Heavy cotton twill overshirt with utility gusset pockets, reinforced elbow patches, and horn button closures."
+      },
+      {
+        id: 4,
+        title: "Raw Hem Relaxed Fit Denim",
+        category: "pants",
+        price: 295000,
+        originalPrice: 390000,
+        image: "img/now.png",
+        description: "13.5oz selvedge ring-spun denim with gentle vintage fading, relaxed wide leg drape, and finished raw hems."
+      },
+      {
+        id: 5,
+        title: "Vintage Washed Oversized Crewneck",
+        category: "hoodie",
+        price: 240000,
+        originalPrice: 320000,
+        image: "img/tb1.png",
+        description: "Pre-shrunk vintage wash French terry crewneck with distressed ribbing details and relaxed chest."
+      },
+      {
+        id: 6,
+        title: "Tailored Pleated Flannel Trousers",
+        category: "pants",
+        price: 310000,
+        originalPrice: 415000,
+        image: "img/tb2.png",
+        description: "Double forward pleats with comfortable relaxed taper, rear jetted pockets, and luxury viscose lining."
+      },
+      {
+        id: 7,
+        title: "Waxed Cotton Field Parka",
+        category: "jacket",
+        price: 450000,
+        originalPrice: 600000,
+        image: "img/tb3.png",
+        description: "Weather-resistant waxed canvas shell with corduroy collar accents and breathable cupro body lining."
+      },
+      {
+        id: 8,
+        title: "Tokyo Streetwear Oversized Graphic Tee",
+        category: "tee",
+        price: 195000,
+        originalPrice: 260000,
+        image: "img/tb4.png",
+        description: "Heavyweight open-end yarn construction with ribbed crewneck collar and subtle distress along the hemline."
+      }
+    ];
+
+    let allProducts = [...LOCAL_ARCHIVE];
+    let selectedCategory = 'all';
+    let searchQuery = '';
+    let sortMethod = 'featured';
+    let currentSelectedSize = 'M';
+    let activeQuickViewProduct = null;
+
+    // Fetch FakeStoreAPI to enrich catalog with graceful error handling
+    async function loadCatalog() {
+      const grid = document.getElementById('catalog-grid');
+      try {
+        const res = await fetch('https://fakestoreapi.com/products/category/men\'s clothing');
+        if (res.ok) {
+          const apiProducts = await res.json();
+          // Transform API products into SecondStyle currency and schema
+          const mapped = apiProducts.map(p => ({
+            id: 'api-' + p.id,
+            title: p.title,
+            category: p.title.toLowerCase().includes('jacket') ? 'jacket' : 'tee',
+            price: Math.round(p.price * 15000),
+            originalPrice: Math.round(p.price * 15000 * 1.33),
+            image: p.image,
+            description: p.description
+          }));
+          allProducts = [...LOCAL_ARCHIVE, ...mapped];
+        }
+      } catch (err) {
+        console.warn('FakeStoreAPI offline, continuing with local archive:', err);
+      } finally {
+        renderProducts();
+      }
+    }
+
+    function renderProducts() {
+      const grid = document.getElementById('catalog-grid');
+      const emptyState = document.getElementById('catalog-empty-state');
+      const countLabel = document.getElementById('product-count-label');
+
+      // Filter by category
+      let filtered = allProducts.filter(item => {
+        if (selectedCategory !== 'all' && item.category !== selectedCategory) return false;
+        if (searchQuery.trim() !== '') {
+          const q = searchQuery.toLowerCase();
+          return item.title.toLowerCase().includes(q) || item.category.toLowerCase().includes(q);
+        }
+        return true;
+      });
+
+      // Sort
+      if (sortMethod === 'price-low') {
+        filtered.sort((a, b) => a.price - b.price);
+      } else if (sortMethod === 'price-high') {
+        filtered.sort((a, b) => b.price - a.price);
+      }
+
+      countLabel.textContent = `Displaying ${filtered.length} curated piece${filtered.length === 1 ? '' : 's'}`;
+
+      if (filtered.length === 0) {
+        grid.style.display = 'none';
+        emptyState.style.display = 'block';
+        return;
+      }
+
+      grid.style.display = 'grid';
+      emptyState.style.display = 'none';
+      grid.innerHTML = '';
+
+      filtered.forEach(item => {
+        const card = document.createElement('article');
+        card.className = 'bezel-card tilt-card';
+        card.innerHTML = `
+          <div class="bezel-card-inner" style="display: flex; flex-direction: column;">
+            <div style="position: relative; background: #f3f2ee; padding: 24px; text-align: center; overflow: hidden;">
+              <span class="pill-tag" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.9); font-size: 10px;">
+                ${item.category.toUpperCase()}
+              </span>
+              <img src="${item.image}" alt="${item.title}" style="height: 190px; width: 100%; object-fit: contain; margin: 0 auto;">
+            </div>
+            <div style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
+              <h4 style="font-weight: 400; font-size: 14.5px; margin-bottom: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${item.title}">
+                ${item.title}
+              </h4>
+              <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 14px;">
+                <span style="font-size: 15px; font-weight: 400; color: var(--text-primary);">${window.SecondStyleStore.formatCurrency(item.price)}</span>
+                <span style="font-size: 12px; text-decoration: line-through; color: var(--text-muted);">${window.SecondStyleStore.formatCurrency(item.originalPrice)}</span>
+              </div>
+              <div style="margin-top: auto; display: flex; gap: 8px;">
+                <button onclick="openQuickView('${item.id}')" class="btn-secondary" style="flex: 1; min-height: 38px; padding: 6px 12px; font-size: 11px;">
+                  Quick View
+                </button>
+                <button onclick="directAddToCart('${item.id}')" class="btn-luxury" style="padding: 6px 12px; min-height: 38px; font-size: 11px;" aria-label="Add to cart">
+                  <span>Add</span>
+                  <span class="btn-icon" style="width: 22px; height: 22px;">+</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // Modal Quick View
+    function openQuickView(id) {
+      const product = allProducts.find(p => p.id == id);
+      if (!product) return;
+      activeQuickViewProduct = product;
+
+      document.getElementById('qv-image').src = product.image;
+      document.getElementById('qv-title').textContent = product.title;
+      document.getElementById('qv-category').textContent = product.category.toUpperCase() + ' ARCHIVE';
+      document.getElementById('qv-price').textContent = window.SecondStyleStore.formatCurrency(product.price);
+      document.getElementById('qv-orig-price').textContent = window.SecondStyleStore.formatCurrency(product.originalPrice);
+      document.getElementById('qv-desc').textContent = product.description;
+      document.getElementById('qv-detail-link').href = `detailproduk.html?productId=${product.id}`;
+
+      document.getElementById('quick-view-modal').classList.add('active');
+    }
+
+    function closeQuickView() {
+      document.getElementById('quick-view-modal').classList.remove('active');
+      activeQuickViewProduct = null;
+    }
+
+    // Direct add to bag
+    function directAddToCart(id) {
+      const product = allProducts.find(p => p.id == id);
+      if (product) {
+        window.SecondStyleStore.addToCart(product, 'M', 1);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadCatalog();
+
+      // Search event listener
+      const searchInput = document.getElementById('catalog-search');
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value;
+        renderProducts();
+      });
+
+      // Sort event listener
+      const sortSelect = document.getElementById('catalog-sort');
+      sortSelect.addEventListener('change', (e) => {
+        sortMethod = e.target.value;
+        renderProducts();
+      });
+
+      // Category Pill Click
+      const categoryPills = document.querySelectorAll('#category-pills button');
+      categoryPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          categoryPills.forEach(p => {
+            p.style.background = 'transparent';
+            p.style.color = 'var(--text-secondary)';
+            p.style.borderColor = 'rgba(191, 161, 117, 0.25)';
+          });
+          pill.style.background = 'var(--bg-dark)';
+          pill.style.color = '#ffffff';
+          pill.style.borderColor = 'transparent';
+          selectedCategory = pill.dataset.category;
+          renderProducts();
+        });
+      });
+
+      // Reset filters button
+      document.getElementById('reset-filters-btn').addEventListener('click', () => {
+        selectedCategory = 'all';
+        searchQuery = '';
+        searchInput.value = '';
+        categoryPills[0].click();
+      });
+
+      // Size buttons in Quick View
+      const sizeBtns = document.querySelectorAll('#qv-size-selector .size-btn');
+      sizeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          sizeBtns.forEach(b => {
+            b.style.background = 'transparent';
+            b.style.color = 'inherit';
+          });
+          btn.style.background = 'var(--bg-dark)';
+          btn.style.color = '#ffffff';
+          currentSelectedSize = btn.dataset.size;
+        });
+      });
+
+      // Modal Add to Bag Button
+      document.getElementById('qv-add-btn').addEventListener('click', () => {
+        if (activeQuickViewProduct) {
+          window.SecondStyleStore.addToCart(activeQuickViewProduct, currentSelectedSize, 1);
+          closeQuickView();
+        }
+      });
+
+      // Close modal on escape
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeQuickView();
+      });
+    });
+  </script>
 </body>
-
 </html>
