@@ -1,0 +1,698 @@
+/* ==========================================================================
+   SecondStyle Modern Editorial Design System
+   Awwwards-Tier Luxury Preloved Fashion Platform
+   Typography: Refined Light & Regular Weights (Font-Weight: 300 / 400)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Syne:wght@400;500&display=swap');
+
+:root {
+  /* Color Palette */
+  --bg-primary: #fbfbf9;
+  --bg-surface: #ffffff;
+  --bg-elevated: #f4f3ef;
+  --bg-dark: #0c0e12;
+  --bg-dark-card: #14171d;
+  
+  --text-primary: #121418;
+  --text-secondary: #5a606d;
+  --text-muted: #8c93a0;
+  --text-inverted: #fbfbf9;
+
+  --accent-gold: #bfa175;
+  --accent-gold-hover: #ad8f63;
+  --accent-gold-soft: rgba(191, 161, 117, 0.12);
+  --accent-emerald: #2d6a4f;
+  --accent-danger: #c94a4a;
+
+  --border-subtle: #eae8e1;
+  --border-strong: #d4d0c5;
+  --border-dark: rgba(255, 255, 255, 0.08);
+
+  /* Elevation & Shadows */
+  --shadow-ambient: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+  --shadow-floating: 0 20px 40px -15px rgba(0, 0, 0, 0.07);
+  --shadow-inner-glow: inset 0 1px 1px rgba(255, 255, 255, 0.6);
+
+  /* Typography */
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Syne', sans-serif;
+  --font-serif: 'Cinzel', serif;
+
+  /* Sizing & Radius */
+  --radius-outer: 24px;
+  --radius-inner: 18px;
+  --radius-sm: 10px;
+  --radius-pill: 9999px;
+
+  /* Motion */
+  --bezier-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.25s var(--bezier-spring);
+  --transition-smooth: 0.45s var(--bezier-spring);
+  --transition-slow: 0.8s var(--bezier-spring);
+}
+
+/* ==========================================================================
+   CSS Reset & Base Styles
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+/* Restrained Typography (Bans Heavy Chunky Bold) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: clamp(2rem, 4.5vw, 3.75rem);
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.35rem);
+}
+
+h3 {
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+}
+
+h4 {
+  font-size: 1.15rem;
+}
+
+p {
+  font-weight: 300;
+  color: var(--text-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Keyboard Accessibility Indicator */
+:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   Doppelrand (Double-Bezel) Architecture
+   ========================================================================== */
+
+.bezel-card {
+  background: rgba(0, 0, 0, 0.025);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-outer);
+  padding: 6px;
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.bezel-card-inner {
+  background: var(--bg-surface);
+  border-radius: var(--radius-inner);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-ambient);
+  overflow: hidden;
+  height: 100%;
+}
+
+.bezel-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-floating);
+}
+
+/* Dark Variant Doppelrand */
+.bezel-card-dark {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-outer);
+  padding: 6px;
+}
+
+.bezel-card-dark .bezel-card-inner {
+  background: var(--bg-dark-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   Navigation Floating Pill
+   ========================================================================== */
+
+.nav-wrapper {
+  position: sticky;
+  top: 18px;
+  z-index: 100;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.floating-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(230, 228, 220, 0.85);
+  border-radius: var(--radius-pill);
+  padding: 10px 24px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.06);
+}
+
+.nav-brand {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-primary);
+}
+
+.nav-brand span {
+  font-family: var(--font-serif);
+  color: var(--accent-gold);
+  font-size: 1.1em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-link {
+  font-size: 13.5px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  position: relative;
+  padding: 4px 0;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--text-primary);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background: var(--text-primary);
+  transition: width var(--transition-fast);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.icon-btn:hover {
+  background: var(--bg-primary);
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+}
+
+.cart-badge {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  background: var(--accent-gold);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 500;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+/* ==========================================================================
+   Button Architecture (Button-in-Button)
+   ========================================================================== */
+
+.btn-luxury {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 10px 10px 24px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--bg-dark);
+  color: var(--text-inverted);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  min-height: 48px;
+}
+
+.btn-luxury .btn-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+.btn-luxury:hover {
+  background: #1e222a;
+  box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn-luxury:hover .btn-icon {
+  background: var(--accent-gold);
+  transform: translate(2px, -2px);
+}
+
+.btn-luxury:active {
+  transform: scale(0.98);
+}
+
+/* Secondary Ghost Button */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-strong);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  min-height: 48px;
+}
+
+.btn-secondary:hover {
+  background: var(--bg-elevated);
+  border-color: var(--text-primary);
+}
+
+/* Accent Gold Button */
+.btn-accent {
+  background: var(--accent-gold);
+  color: #ffffff;
+}
+
+.btn-accent:hover {
+  background: var(--accent-gold-hover);
+}
+
+/* ==========================================================================
+   Badges & Micro-Tags
+   ========================================================================== */
+
+.pill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--accent-gold-soft);
+  color: var(--accent-gold-hover);
+  border: 1px solid rgba(191, 161, 117, 0.25);
+}
+
+.pill-tag.tag-emerald {
+  background: rgba(45, 106, 79, 0.1);
+  color: var(--accent-emerald);
+  border-color: rgba(45, 106, 79, 0.25);
+}
+
+.pill-tag.tag-dark {
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--text-primary);
+  border-color: var(--border-subtle);
+}
+
+/* ==========================================================================
+   Kinetic Infinite Marquee
+   ========================================================================== */
+
+.marquee-container {
+  overflow: hidden;
+  user-select: none;
+  background: var(--bg-dark);
+  color: var(--text-inverted);
+  padding: 14px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  gap: 40px;
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.marquee-item span.bullet {
+  color: var(--accent-gold);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ==========================================================================
+   Interactive 3D Perspective Tilt Card
+   ========================================================================== */
+
+.tilt-card {
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  transform-style: preserve-3d;
+}
+
+.tilt-card:hover {
+  transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) translateY(-6px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================================================
+   Form Controls & Modern Inputs
+   ========================================================================== */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.form-label {
+  font-size: 12.5px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 13px 18px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-primary);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 3px var(--accent-gold-soft);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* ==========================================================================
+   Luxury Toast Notification System
+   ========================================================================== */
+
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.toast-pill {
+  pointer-events: auto;
+  min-width: 320px;
+  max-width: 420px;
+  background: var(--bg-dark);
+  color: var(--text-inverted);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-outer);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  animation: toastSlideIn 0.5s var(--bezier-spring) forwards;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast-pill.toast-hiding {
+  opacity: 0;
+  transform: translateY(12px) scale(0.95);
+}
+
+.toast-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--accent-gold);
+}
+
+.toast-content {
+  flex: 1;
+}
+
+.toast-title {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+
+.toast-desc {
+  font-size: 12px;
+  font-weight: 300;
+  color: #a0a6b5;
+  margin-top: 2px;
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ==========================================================================
+   Modal Dialog Architecture
+   ========================================================================== */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 14, 18, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-fast);
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-outer);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.25);
+  transform: translateY(20px) scale(0.96);
+  transition: transform var(--transition-smooth);
+  padding: 32px;
+  position: relative;
+}
+
+.modal-backdrop.active .modal-card {
+  transform: translateY(0) scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.modal-close:hover {
+  background: var(--bg-dark);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Shimmer Loading Skeleton
+   ========================================================================== */
+
+.skeleton {
+  background: linear-gradient(90deg, #f0ede6 25%, #faf8f5 50%, #f0ede6 75%);
+  background-size: 200% 100%;
+  animation: skeletonPulse 1.8s infinite;
+  border-radius: 8px;
+}
+
+@keyframes skeletonPulse {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ==========================================================================
+   Grid & Layout Utilities
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-spacing {
+  padding: 80px 0;
+}
+
+@media (max-width: 768px) {
+  .section-spacing {
+    padding: 48px 0;
+  }
+  .nav-links {
+    display: none;
+  }
+  .floating-nav {
+    padding: 8px 16px;
+  }
+}
