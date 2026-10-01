@@ -1,190 +1,448 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Second Style</title>
-    <link href="src/output.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecondStyle — Editorial Preloved Luxury Archive</title>
+  <meta name="description" content="SecondStyle curates rare preloved fashion and circular luxury essentials with verified authenticity.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
+<body>
 
-<body class="bg-gray-100 text-gray-800 font-sans">
+  <!-- Floating Luxury Navigation -->
+  <div class="nav-wrapper">
+    <header class="floating-nav">
+      <a href="index.html" class="nav-brand">
+        Second<span>Style</span>
+      </a>
 
- 
-    <header class="bg-white shadow-md">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-           
-            <h1 class="text-2xl font-bold text-blue-800">
-                <span class="text-black">Second</span><span class="text-red-500">Style</span>
-            </h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="homepage.html" class="nav-link">Shop Archive</a></li>
+          <li><a href="aboutus.html" class="nav-link">Our Story</a></li>
+          <li><a href="profile.html" class="nav-link">Dashboard</a></li>
+        </ul>
+      </nav>
 
+      <div class="nav-actions">
+        <a href="homepage.html" class="icon-btn" aria-label="Search items">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </a>
 
-            <nav class="space-x-6">
-                <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
-                <a href="aboutus.html" class="text-gray-700 hover:text-blue-600">About us</a>
-                <a href="homepage.html" class="text-gray-700 hover:text-blue-600">Shop</a>
-            </nav>
+        <a href="profile.html" class="icon-btn" aria-label="Account profile">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
 
-            
-            <div class="flex items-center space-x-4">
-              
-                <input type="text" placeholder="Search for items"
-                    class="border px-2 py-1 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-
-               
-                <a href="login.html">
-                    <button class="relative">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-700 hover:text-blue-600" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.4 5m0 0a1 1 0 102 0m-2 0H17a1 1 0 100-2H6.6" />
-                        </svg>
-                        <span
-                            class="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">3</span>
-                    </button>
-                </a>
-                
-              
-                <a href="login.html">
-                    <button>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-700 hover:text-blue-600" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M5.121 17.804A9 9 0 1112 21a9 9 0 01-6.879-3.196zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                    </button>
-                </a>
-            </div>
-        </div>
+        <a href="cart.html" class="icon-btn" aria-label="Shopping Cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" id="cart-count">0</span>
+        </a>
+      </div>
     </header>
+  </div>
 
- ->
-    <div class="bg-gray-200 text-center py-2 font-semibold text-sm">
-        25% OFF 1000S OF STYLES WITH CODE : SECOND9
+  <!-- Hero Section -->
+  <main>
+    <section class="section-spacing" style="padding-top: 40px; padding-bottom: 60px;">
+      <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; align-items: center;">
+        
+        <!-- Left Hero Narrative -->
+        <div>
+          <div style="margin-bottom: 18px;">
+            <span class="pill-tag">Drop 2026 : Circular Luxury</span>
+          </div>
+
+          <h1 style="margin-bottom: 20px; font-weight: 300;">
+            Refining the archive of <span style="font-family: var(--font-serif); font-style: italic; color: var(--accent-gold);">preloved</span> fashion.
+          </h1>
+
+          <p style="font-size: 16px; margin-bottom: 32px; max-width: 480px; line-height: 1.8;">
+            SecondStyle delivers hand-curated garments with architectural cuts and verified heritage. We celebrate timeless expression while championing zero-waste circularity.
+          </p>
+
+          <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+            <a href="homepage.html" class="btn-luxury">
+              <span>Explore Archive</span>
+              <span class="btn-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </span>
+            </a>
+
+            <a href="aboutus.html" class="btn-secondary">
+              Our Philosophy
+            </a>
+          </div>
+
+          <!-- Micro Trust Indicator -->
+          <div style="margin-top: 40px; display: flex; align-items: center; gap: 24px; border-top: 1px solid var(--border-subtle); padding-top: 24px;">
+            <div>
+              <div style="font-size: 18px; font-weight: 400; color: var(--text-primary);">100%</div>
+              <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted);">Authenticated</div>
+            </div>
+            <div style="width: 1px; height: 28px; background: var(--border-subtle);"></div>
+            <div>
+              <div style="font-size: 18px; font-weight: 400; color: var(--text-primary);">A+ Grade</div>
+              <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted);">Curated Condition</div>
+            </div>
+            <div style="width: 1px; height: 28px; background: var(--border-subtle);"></div>
+            <div>
+              <div style="font-size: 18px; font-weight: 400; color: var(--accent-gold);">25% OFF</div>
+              <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted);">Code: SECOND9</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual: Interactive Three.js 3D Garment Canvas & Video -->
+        <div>
+          <div class="bezel-card" style="padding: 8px;">
+            <div class="bezel-card-inner" style="position: relative; height: 480px; display: flex; flex-direction: column; justify-content: center; align-items: center; background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f4f2ea 100%);">
+              
+              <!-- 3D Interactive Canvas -->
+              <div id="hero-3d-canvas" style="width: 100%; height: 100%; cursor: grab;"></div>
+
+              <!-- Interactive Badge -->
+              <div style="position: absolute; bottom: 20px; left: 24px; right: 24px; display: flex; justify-content: space-between; align-items: center; pointer-events: none;">
+                <span class="pill-tag tag-dark" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(8px);">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                  </svg>
+                  Interactive 3D Mesh (Drag to Rotate)
+                </span>
+                <span style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted);">Studio Spec 01</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Kinetic Marquee Ticker -->
+    <div class="marquee-container" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-item">25% Off with code: SECOND9 <span class="bullet">•</span> Circular Luxury Archive <span class="bullet">•</span> Sustainable Preloved Fashion <span class="bullet">•</span> Authenticity Guaranteed <span class="bullet">•</span> Express Worldwide Dispatch <span class="bullet">•</span></div>
+        <div class="marquee-item">25% Off with code: SECOND9 <span class="bullet">•</span> Circular Luxury Archive <span class="bullet">•</span> Sustainable Preloved Fashion <span class="bullet">•</span> Authenticity Guaranteed <span class="bullet">•</span> Express Worldwide Dispatch <span class="bullet">•</span></div>
+      </div>
     </div>
 
-
-    <section class="bg-white py-8">
-        <div class="container mx-auto px-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <img src="img/model1.jpg" alt="Model"
-                class="w-full max-w-sm md:max-w-xs lg:max-w-sm mx-auto rounded-lg object-cover block">
-            <div>
-                <h2 class="text-xl font-bold mb-2">SECONDSTYLE</h2>
-                <p class="mb-4">Selamat datang di Second Style! Kami adalah toko fashion preloved yang menawarkan gaya
-                    unik,
-                    berkualitas, dan ramah lingkungan.</p>
-                <p class="mb-4">Di Second Style, setiap item punya cerita, dan belanja di sini berarti mendukung fashion
-                    berkelanjutan.</p>
-                <a href="create_account.html"
-                    class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 inline-block">SHOP NOW</a>
-            </div>
+    <!-- Why SecondStyle: Editorial Pillars -->
+    <section class="section-spacing" style="background: var(--bg-surface); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        
+        <div style="text-align: center; max-width: 600px; margin: 0 auto 56px auto;">
+          <span class="pill-tag" style="margin-bottom: 14px;">The Standard</span>
+          <h2 style="font-weight: 300; margin-bottom: 12px;">Purity in curation. Respect for history.</h2>
+          <p>Every piece in SecondStyle undergoes comprehensive material inspection to ensure uncompromising longevity.</p>
         </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+          
+          <!-- Pillar 1 -->
+          <div class="bezel-card">
+            <div class="bezel-card-inner" style="padding: 36px 28px;">
+              <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--bg-elevated); border: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: center; margin-bottom: 24px; color: var(--accent-gold);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <h3 style="font-size: 1.25rem; font-weight: 400; margin-bottom: 12px;">Verified Provenance</h3>
+              <p style="font-size: 14px; line-height: 1.7;">
+                Strict multi-point inspection examining stitch counts, hardware authenticity, and fabric preservation before accession.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="bezel-card">
+            <div class="bezel-card-inner" style="padding: 36px 28px;">
+              <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--bg-elevated); border: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: center; margin-bottom: 24px; color: var(--accent-gold);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                  <polyline points="17 6 23 6 23 12"></polyline>
+                </svg>
+              </div>
+              <h3 style="font-size: 1.25rem; font-weight: 400; margin-bottom: 12px;">Circular Value</h3>
+              <p style="font-size: 14px; line-height: 1.7;">
+                Acquiring preloved luxury allows you to build an iconic wardrobe while actively diverting virgin resources and textile waste.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="bezel-card">
+            <div class="bezel-card-inner" style="padding: 36px 28px;">
+              <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--bg-elevated); border: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: center; margin-bottom: 24px; color: var(--accent-gold);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <h3 style="font-size: 1.25rem; font-weight: 400; margin-bottom: 12px;">Rare Archive Cuts</h3>
+              <p style="font-size: 14px; line-height: 1.7;">
+                Discover rare silhouettes and discontinued seasonal pieces that set your personal aesthetic apart from mass-market trends.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </section>
 
-
-    <section class="bg-gray-100 py-8">
-        <div class="container mx-auto px-4">
-            <h3 class="text-center text-2xl font-bold mb-6">KENAPA HARUS MEMBELI DI SECOND STYLE?</h3>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white p-4 rounded shadow">
-                    <h4 class="font-bold text-lg mb-2">Harga lebih hemat</h4>
-                    <p>Dapatkan fashion berkualitas dengan harga yang lebih terjangkau</p>
-                </div>
-                <div class="bg-white p-4 rounded shadow">
-                    <h4 class="font-bold text-lg mb-2">Kualitas terjamin</h4>
-                    <p>Setiap item telah kami pilih dengan cermat untuk memastikan kondisi terbaik bagi Anda</p>
-                </div>
-                <div class="bg-white p-4 rounded shadow">
-                    <h4 class="font-bold text-lg mb-2 text-red-600">Style unik & Eksklusif</h4>
-                    <p>Temukan koleksi fashion yang langka dan berbeda dari yang lain</p>
-                </div>
-            </div>
+    <!-- Curated Drops Section (Interactive Tilt Cards & Quick Add) -->
+    <section class="section-spacing">
+      <div class="container">
+        
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; flex-wrap: wrap; gap: 20px;">
+          <div>
+            <span class="pill-tag" style="margin-bottom: 12px;">Latest Additions</span>
+            <h2 style="font-weight: 300;">Curated Archive Releases</h2>
+          </div>
+          <a href="homepage.html" class="btn-secondary" style="font-size: 12px; padding: 8px 20px;">
+            View All Pieces (12)
+          </a>
         </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px;" id="featured-drops-container">
+          
+          <!-- Product Card 1 -->
+          <article class="bezel-card tilt-card">
+            <div class="bezel-card-inner" style="display: flex; flex-direction: column;">
+              <div style="position: relative; background: #f3f2ee; padding: 24px; text-align: center; overflow: hidden;">
+                <span class="pill-tag" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.9); font-size: 10px;">-25%</span>
+                <img src="img/hood.jpg" alt="Black Heavyweight Zipper Hoodie" style="height: 200px; width: 100%; object-fit: contain; margin: 0 auto; transition: transform var(--transition-smooth);" class="product-thumb">
+              </div>
+              <div style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
+                <span style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px;">Outerwear • Size L</span>
+                <h4 style="font-weight: 400; font-size: 15px; margin-bottom: 8px;">Heavyweight Zipper Hoodie</h4>
+                <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px;">
+                  <span style="font-size: 16px; font-weight: 400; color: var(--text-primary);">Rp 262.500</span>
+                  <span style="font-size: 13px; text-decoration: line-through; color: var(--text-muted);">Rp 350.000</span>
+                </div>
+                <div style="margin-top: auto; display: flex; gap: 8px;">
+                  <a href="detailproduk.html?productId=1" class="btn-secondary" style="flex: 1; min-height: 40px; padding: 8px 12px; font-size: 11px;">Inspect</a>
+                  <button onclick="handleQuickAdd(1, 'Heavyweight Zipper Hoodie', 262500, 'img/hood.jpg')" class="btn-luxury" style="padding: 8px 14px; min-height: 40px; font-size: 11px;" aria-label="Add to bag">
+                    <span>Add</span>
+                    <span class="btn-icon" style="width: 24px; height: 24px;">+</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product Card 2 -->
+          <article class="bezel-card tilt-card">
+            <div class="bezel-card-inner" style="display: flex; flex-direction: column;">
+              <div style="position: relative; background: #f3f2ee; padding: 24px; text-align: center; overflow: hidden;">
+                <span class="pill-tag tag-emerald" style="position: absolute; top: 12px; left: 12px; font-size: 10px;">Rare</span>
+                <img src="img/lets.png" alt="Boxy Graphic Archive Tee" style="height: 200px; width: 100%; object-fit: contain; margin: 0 auto;" class="product-thumb">
+              </div>
+              <div style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
+                <span style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px;">Tees • Size M</span>
+                <h4 style="font-weight: 400; font-size: 15px; margin-bottom: 8px;">Minimalist Typography Tee</h4>
+                <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px;">
+                  <span style="font-size: 16px; font-weight: 400; color: var(--text-primary);">Rp 185.000</span>
+                  <span style="font-size: 13px; text-decoration: line-through; color: var(--text-muted);">Rp 245.000</span>
+                </div>
+                <div style="margin-top: auto; display: flex; gap: 8px;">
+                  <a href="detailproduk.html?productId=2" class="btn-secondary" style="flex: 1; min-height: 40px; padding: 8px 12px; font-size: 11px;">Inspect</a>
+                  <button onclick="handleQuickAdd(2, 'Minimalist Typography Tee', 185000, 'img/lets.png')" class="btn-luxury" style="padding: 8px 14px; min-height: 40px; font-size: 11px;" aria-label="Add to bag">
+                    <span>Add</span>
+                    <span class="btn-icon" style="width: 24px; height: 24px;">+</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product Card 3 -->
+          <article class="bezel-card tilt-card">
+            <div class="bezel-card-inner" style="display: flex; flex-direction: column;">
+              <div style="position: relative; background: #f3f2ee; padding: 24px; text-align: center; overflow: hidden;">
+                <span class="pill-tag" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.9); font-size: 10px;">-25%</span>
+                <img src="img/buyit.png" alt="Oversized Utility Work Jacket" style="height: 200px; width: 100%; object-fit: contain; margin: 0 auto;" class="product-thumb">
+              </div>
+              <div style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
+                <span style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px;">Outerwear • Size XL</span>
+                <h4 style="font-weight: 400; font-size: 15px; margin-bottom: 8px;">Oversized Utility Jacket</h4>
+                <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px;">
+                  <span style="font-size: 16px; font-weight: 400; color: var(--text-primary);">Rp 385.000</span>
+                  <span style="font-size: 13px; text-decoration: line-through; color: var(--text-muted);">Rp 510.000</span>
+                </div>
+                <div style="margin-top: auto; display: flex; gap: 8px;">
+                  <a href="detailproduk.html?productId=3" class="btn-secondary" style="flex: 1; min-height: 40px; padding: 8px 12px; font-size: 11px;">Inspect</a>
+                  <button onclick="handleQuickAdd(3, 'Oversized Utility Jacket', 385000, 'img/buyit.png')" class="btn-luxury" style="padding: 8px 14px; min-height: 40px; font-size: 11px;" aria-label="Add to bag">
+                    <span>Add</span>
+                    <span class="btn-icon" style="width: 24px; height: 24px;">+</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product Card 4 -->
+          <article class="bezel-card tilt-card">
+            <div class="bezel-card-inner" style="display: flex; flex-direction: column;">
+              <div style="position: relative; background: #f3f2ee; padding: 24px; text-align: center; overflow: hidden;">
+                <span class="pill-tag tag-emerald" style="position: absolute; top: 12px; left: 12px; font-size: 10px;">Archive</span>
+                <img src="img/now.png" alt="Raw Hem Relaxed Fit Denim" style="height: 200px; width: 100%; object-fit: contain; margin: 0 auto;" class="product-thumb">
+              </div>
+              <div style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
+                <span style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px;">Pants • Size 32</span>
+                <h4 style="font-weight: 400; font-size: 15px; margin-bottom: 8px;">Raw Hem Relaxed Denim</h4>
+                <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px;">
+                  <span style="font-size: 16px; font-weight: 400; color: var(--text-primary);">Rp 295.000</span>
+                  <span style="font-size: 13px; text-decoration: line-through; color: var(--text-muted);">Rp 390.000</span>
+                </div>
+                <div style="margin-top: auto; display: flex; gap: 8px;">
+                  <a href="detailproduk.html?productId=4" class="btn-secondary" style="flex: 1; min-height: 40px; padding: 8px 12px; font-size: 11px;">Inspect</a>
+                  <button onclick="handleQuickAdd(4, 'Raw Hem Relaxed Denim', 295000, 'img/now.png')" class="btn-luxury" style="padding: 8px 14px; min-height: 40px; font-size: 11px;" aria-label="Add to bag">
+                    <span>Add</span>
+                    <span class="btn-icon" style="width: 24px; height: 24px;">+</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
     </section>
 
+    <!-- Editorial Video Campaign Banner -->
+    <section class="section-spacing" style="padding-top: 20px; padding-bottom: 80px;">
+      <div class="container">
+        <div class="bezel-card-dark">
+          <div class="bezel-card-inner" style="padding: 56px 40px; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; text-align: center; color: #ffffff;">
+            
+            <span class="pill-tag tag-dark" style="background: rgba(255, 255, 255, 0.1); color: var(--accent-gold); border-color: rgba(255, 255, 255, 0.15); margin-bottom: 20px;">
+              Visual Editorial
+            </span>
 
-    <section class="py-8 bg-white">
-        <div class="container mx-auto px-4">
-            <h3 class="text-2xl font-bold mb-6 text-center">SHOP THE LATEST RELEASES</h3>
-            <div class="grid md:grid-cols-4 gap-6 text-center">
+            <h2 style="font-weight: 300; color: #ffffff; max-width: 650px; margin-bottom: 18px;">
+              Where garment craftsmanship transcends seasonal obsolescence.
+            </h2>
 
-                <div class="bg-gray-50 p-4 rounded shadow relative text-center">
-                    <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">25%</span>
-                    <img src="img/hood.jpg" alt="Black Zipper Hoodie" class="mb-2 mx-auto block w-40">
-                    <h4 class="font-semibold">BLACK ZIPPER HOODIE</h4>
-                    <p class="line-through text-sm text-gray-500">350.000</p>
-                    <p class="font-bold text-red-600">262.500</p>
-                </div>
+            <p style="color: #9ba0aa; max-width: 520px; font-size: 15px; margin-bottom: 32px;">
+              Watch our retrospective lookbook exploring Tokyo and Parisian thrift curation archives.
+            </p>
 
-                <div class="bg-gray-50 p-4 rounded shadow relative text-center">
-                    <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">25%</span>
-                    <img src="img/hood.jpg" alt="Black Zipper Hoodie" class="mb-2 mx-auto block w-40">
-                    <h4 class="font-semibold">BLACK ZIPPER HOODIE</h4>
-                    <p class="line-through text-sm text-gray-500">350.000</p>
-                    <p class="font-bold text-red-600">262.500</p>
-                </div>
-                <div class="bg-gray-50 p-4 rounded shadow relative text-center">
-                    <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">25%</span>
-                    <img src="img/hood.jpg" alt="Black Zipper Hoodie" class="mb-2 mx-auto block w-40">
-                    <h4 class="font-semibold">BLACK ZIPPER HOODIE</h4>
-                    <p class="line-through text-sm text-gray-500">350.000</p>
-                    <p class="font-bold text-red-600">262.500</p>
-                </div>
-                <div class="bg-gray-50 p-4 rounded shadow relative text-center">
-                    <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">25%</span>
-                    <img src="img/hood.jpg" alt="Black Zipper Hoodie" class="mb-2 mx-auto block w-40">
-                    <h4 class="font-semibold">BLACK ZIPPER HOODIE</h4>
-                    <p class="line-through text-sm text-gray-500">350.000</p>
-                    <p class="font-bold text-red-600">262.500</p>
-                </div>
-            </div>
+            <a href="aboutus.html" class="btn-luxury" style="background: var(--accent-gold); color: #ffffff;">
+              <span>Watch Campaign Story</span>
+              <span class="btn-icon" style="background: rgba(0, 0, 0, 0.2);">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </span>
+            </a>
 
-
-            <div class="mt-10 text-center">
-                <h4 class="text-xl font-semibold">HOODIE ZIPPER BLACK</h4>
-                <p class="line-through text-sm text-gray-500">550.000</p>
-                <p class="text-sm">Size: M, L, XL</p>
-                <button class="bg-gray-400 text-white px-4 py-2 rounded mt-2 cursor-not-allowed" disabled>SOLD
-                    OUT</button>
-                <a href="create_account.html" class="ml-2 bg-black text-white px-4 py-2 rounded inline-block">BUY IT
-                    NOW</a>
-            </div>
+          </div>
         </div>
+      </div>
     </section>
 
+  </main>
 
-    <footer class="bg-white border-t mt-10 py-6 px-4 text-sm text-black">
-        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
-
-            <div class="space-y-2">
-                <p>Contact Us</p>
-                <p>Size Guide</p>
-                <p>How To Shop</p>
-                <p>FAQ</p>
-                <p>Return Policy</p>
-            </div>
-
-            <div class="space-y-2">
-                <p>Terms & Condition</p>
-                <p>Terms Of Service</p>
-                <p>Refund Policy</p>
-                <p>Order Confirmation</p>
-            </div>
-
-            <div class="space-y-2">
-                <p>📱 Whatsapp</p>
-                <p>📷 Instagram</p>
-                <p>✈️ Telegram</p>
-                <p>🎵 Tiktok</p>
-            </div>
-
-            <div class="flex flex-col items-center justify-center">
-                <p class="text-center">&copy; 2025, SecondStyle / <span class="underline">Daily Wear</span></p>
-                <img src="img/second.png" alt="SecondStyle" class="w-24 mt-2">
-            </div>
+  <!-- Editorial Footer -->
+  <footer style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); padding: 64px 0 32px 0;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 56px;">
+        
+        <div>
+          <div class="nav-brand" style="margin-bottom: 16px;">
+            Second<span>Style</span>
+          </div>
+          <p style="font-size: 13.5px; line-height: 1.8; margin-bottom: 20px;">
+            An editorial circular fashion platform. Curating authenticated preloved garments for mindful aesthetics.
+          </p>
+          <div style="display: flex; gap: 12px;">
+            <a href="#" class="icon-btn" aria-label="Instagram" style="width: 36px; height: 36px;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" class="icon-btn" aria-label="TikTok" style="width: 36px; height: 36px;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+            </a>
+            <a href="#" class="icon-btn" aria-label="WhatsApp" style="width: 36px; height: 36px;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            </a>
+          </div>
         </div>
-    </footer>
 
+        <div>
+          <h4 style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;">Navigation</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+            <li><a href="index.html" class="nav-link" style="padding: 0;">Archive Home</a></li>
+            <li><a href="homepage.html" class="nav-link" style="padding: 0;">Full Shop Catalog</a></li>
+            <li><a href="aboutus.html" class="nav-link" style="padding: 0;">Brand Manifesto</a></li>
+            <li><a href="profile.html" class="nav-link" style="padding: 0;">Account & Orders</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;">Client Service</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+            <li><a href="detailproduk.html?productId=1" class="nav-link" style="padding: 0;">Size Measurement Guide</a></li>
+            <li><a href="cart.html" class="nav-link" style="padding: 0;">Insured Shipping Policy</a></li>
+            <li><a href="checkout.html" class="nav-link" style="padding: 0;">Secure Payments</a></li>
+            <li><a href="aboutus.html" class="nav-link" style="padding: 0;">Condition Rating System</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;">Newsletter Dispatch</h4>
+          <p style="font-size: 13.5px; margin-bottom: 14px;">
+            Receive secret early access drops and seasonal lookbooks directly in your inbox.
+          </p>
+          <form onsubmit="event.preventDefault(); window.SecondStyleStore.showToast('Subscription Confirmed', 'Welcome to the SecondStyle private circle.'); this.reset();" style="display: flex; gap: 8px;">
+            <input type="email" placeholder="Your email address" required class="form-input" style="padding: 10px 14px; font-size: 13px;">
+            <button type="submit" class="btn-luxury" style="padding: 10px 16px; min-height: 42px;">
+              <span>Join</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <div style="border-top: 1px solid var(--border-subtle); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 12px; color: var(--text-muted);">
+        <div>&copy; 2026 SecondStyle Archive. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <span>Privacy Policy</span>
+          <span>Terms of Service</span>
+          <span>Authenticity Protocol</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/store.js"></script>
+  <script src="js/3d-scene.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mount Three.js interactive 3D hero model
+      if (window.SecondStyle3D && window.SecondStyle3D.initHero3D) {
+        window.SecondStyle3D.initHero3D('hero-3d-canvas');
+      }
+    });
+
+    function handleQuickAdd(id, title, price, image) {
+      window.SecondStyleStore.addToCart({
+        id: id,
+        title: title,
+        price: price,
+        image: image
+      }, 'M', 1);
+    }
+  </script>
 </body>
-
 </html>
