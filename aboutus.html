@@ -1,126 +1,220 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - SecondStyle</title>
-    <link href="src/output.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Story & Manifesto — SecondStyle Archive</title>
+  <meta name="description" content="Discover the origins, circular sustainability philosophy, and curation principles of SecondStyle.">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+<body>
 
-<body class="bg-blue-50 font-sans text-gray-800">
+  <!-- Floating Luxury Navigation -->
+  <div class="nav-wrapper">
+    <header class="floating-nav">
+      <a href="index.html" class="nav-brand">
+        Second<span>Style</span>
+      </a>
 
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="homepage.html" class="nav-link">Shop Archive</a></li>
+          <li><a href="aboutus.html" class="nav-link active">Our Story</a></li>
+          <li><a href="profile.html" class="nav-link">Dashboard</a></li>
+        </ul>
+      </nav>
 
-    <header class="bg-blue-100 flex items-center justify-between px-6 py-4">
-        <img src="img/second.png" alt="SecondStyle Logo" class="h-10">
-        <nav class="space-x-6 text-lg font-semibold">
-            <a href="index.html" class="text-black hover:text-blue-600">Home</a>
-            <a href="aboutus.html" class="text-black hover:text-blue-600">About Us</a>
-            <a href="login.html" class="text-black hover:text-blue-600">Shop</a>
-        </nav>
-        <div class="space-x-4 text-xl text-black">
-            <i class="fas fa-user"></i>
-            <i class="fas fa-shopping-cart"></i>
-        </div>
-    </header>
-
-
-    <section class="bg-gray-200 py-6 px-6 text-center shadow rounded-md mx-4 my-6">
-        <p class="max-w-5xl mx-auto text-base md:text-lg font-medium leading-relaxed">
-            Di SecondStyle, kami percaya bahwa fashion adalah ekspresi diri yang terus berkembang.
-            Sebagai platform fashion modern untuk pria dan wanita, kami menghadirkan koleksi pakaian
-            dan aksesori yang selalu mengikuti tren terbaru. <br><br>
-            Kami mengkurasi produk-produk dengan desain stylish dan kualitas terbaik, memastikan
-            setiap pelanggan bisa tampil percaya diri dengan gaya yang sesuai dengan perkembangan
-            zaman. Dari streetwear hingga formal wear, SecondStyle adalah destinasi bagi mereka yang
-            ingin tampil fashionable tanpa batas. <br><br>
-            Bergabunglah dengan kami dan jadilah bagian dari komunitas yang merayakan gaya,
-            kreativitas, dan inovasi dalam dunia fashion. Stay Stylish with SecondStyle!
-        </p>
-    </section>
-
-
-    <section class="text-center py-6 bg-blue-50">
-        <h2 class="text-2xl md:text-3xl font-bold mb-6">2025 PUBLISHED</h2>
-        <div class="flex flex-col md:flex-row justify-center items-center gap-10">
-            <div class="flex flex-col items-center">
-                <img src="img/icon1.png" alt="Icon 1" class="w-12 h-12 mb-2">
-                <p class="font-semibold">towards an attractive appearance</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="img/icon2.png" alt="Icon 2" class="w-12 h-12 mb-2">
-                <p class="font-semibold">towards the best view</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="img/second.png" alt="SecondStyle" class="w-24 mb-2">
-                <p class="font-semibold">SecondStyle On TOPP</p>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="flex flex-col md:flex-row justify-center items-center gap-2 py-8">
-        <div class="relative">
-            <img src="img/lets.png" alt="Let's" class="w-full max-w-xs rounded">
-            <h3
-                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl font-bold">
-                LET’S</h3>
-        </div>
-        <div class="relative">
-            <img src="img/buyit.png" alt="Buy It" class="w-full max-w-xs rounded">
-            <h3
-                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl font-bold">
-                BUY IT</h3>
-        </div>
-        <div class="relative">
-            <img src="img/now.png" alt="Now" class="w-full max-w-xs rounded">
-            <h3
-                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl font-bold">
-                NOW</h3>
-        </div>
-    </section>
-
-    <div class="text-center my-4">
-        <a href="create_account.html"
-            class="inline-block bg-gray-800 text-white px-6 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-gray-700 transition">
-            SHOP NOW
+      <div class="nav-actions">
+        <a href="homepage.html" class="icon-btn" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
         </a>
-        <div class="w-10 h-1 bg-black mt-4 mx-auto rounded-full"></div>
-    </div>
- 
+        <a href="cart.html" class="icon-btn" aria-label="Bag">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" id="cart-count">0</span>
+        </a>
+      </div>
+    </header>
+  </div>
 
-    <footer class="bg-white py-6 mt-8 text-sm">
-        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-6 text-gray-700">
-            <div>
-                <ul class="space-y-1">
-                    <li>Contact Us</li>
-                    <li>Size Guide</li>
-                    <li>How To Shop</li>
-                    <li>FAQ</li>
-                    <li>Return Policy</li>
-                </ul>
+  <main>
+    
+    <!-- Hero Manifesto -->
+    <section class="section-spacing" style="padding-top: 48px; padding-bottom: 64px;">
+      <div class="container" style="max-width: 860px; text-align: center;">
+        <span class="pill-tag" style="margin-bottom: 16px;">The Brand Manifesto</span>
+        <h1 style="font-weight: 300; margin-bottom: 24px; line-height: 1.25;">
+          Fashion is an enduring cultural narrative, never meant for single-season landfill disposal.
+        </h1>
+        <p style="font-size: 17px; line-height: 1.9; color: var(--text-secondary); margin-bottom: 40px;">
+          SecondStyle was founded with an unyielding conviction: the finest garments already exist in the world. By hand-sourcing, authenticating, and conditioning iconic archival silhouettes, we provide modern tastemakers with timeless wardrobe staples while advancing the circular economy.
+        </p>
+
+        <!-- Video Campaign Teaser Card -->
+        <div class="bezel-card-dark" style="margin-bottom: 48px;">
+          <div class="bezel-card-inner" style="position: relative; height: 380px; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; background: radial-gradient(circle, #1a1e27 0%, #0c0e12 100%);">
+            <img src="img/model.png" alt="SecondStyle Lookbook" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; filter: grayscale(80%);">
+            <div style="position: relative; z-index: 2; text-align: center; padding: 24px;">
+              <button onclick="openVideoModal()" class="icon-btn" style="width: 64px; height: 64px; background: var(--accent-gold); color: #ffffff; border: none; margin-bottom: 16px; transform: scale(1); transition: transform var(--transition-fast);" aria-label="Play Campaign Reel">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </button>
+              <h3 style="color: #ffffff; font-weight: 400; font-size: 1.3rem; margin-bottom: 6px;">Tokyo & Paris Thrift Expedition</h3>
+              <p style="color: #9ba0aa; font-size: 13.5px;">Click to view the 2026 Archive Documentary</p>
             </div>
-            <div>
-                <ul class="space-y-1">
-                    <li>Terms & Condition</li>
-                    <li>Terms Of Service</li>
-                    <li>Refund Policy</li>
-                    <li>Order Confirmation</li>
-                </ul>
-            </div>
-            <div class="text-right space-y-2">
-                <div class="flex justify-end gap-2">
-                    <i class="fab fa-whatsapp"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-telegram"></i>
-                    <i class="fab fa-tiktok"></i>
-                </div>
-                <p>© 2025, SecondStyle / <a href="#" class="underline">Daily Wear</a></p>
-                <img src="img/logo.png" alt="SecondStyle Logo" class="h-6 inline-block">
-            </div>
+          </div>
         </div>
-    </footer>
 
+      </div>
+    </section>
+
+    <!-- Verified Sustainability Metrics -->
+    <section class="section-spacing" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 48px;">
+          <span class="pill-tag tag-emerald" style="margin-bottom: 12px;">Environmental Impact</span>
+          <h2 style="font-weight: 300;">Circularity in Tangible Numbers</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;">
+          
+          <div class="bezel-card">
+            <div class="bezel-card-inner" style="padding: 32px 24px; text-align: center;">
+              <div style="font-family: var(--font-display); font-size: 2.8rem; font-weight: 400; color: var(--text-primary); margin-bottom: 6px;">1,420+</div>
+              <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-gold); margin-bottom: 8px;">Kilograms Diverted</div>
+              <p style="font-size: 13.5px; color: var(--text-secondary);">Premium textiles diverted from regional incinerators and industrial landfills.</p>
+            </div>
+          </div>
+
+          <div class="bezel-card">
+            <div class="bezel-card-inner" style="padding: 32px 24px; text-align: center;">
+              <div style="font-family: var(--font-display); font-size: 2.8rem; font-weight: 400; color: var(--text-primary); margin-bottom: 6px;">3,850+</div>
+              <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-gold); margin-bottom: 8px;">Liters Water Saved</div>
+              <p style="font-size: 13.5px; color: var(--text-secondary);">Fresh water conserved by eliminating virgin cotton agricultural demands.</p>
+            </div>
+          </div>
+
+          <div class="bezel-card">
+            <div class="bezel-card-inner" style="padding: 32px 24px; text-align: center;">
+              <div style="font-family: var(--font-display); font-size: 2.8rem; font-weight: 400; color: var(--text-primary); margin-bottom: 6px;">100%</div>
+              <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-gold); margin-bottom: 8px;">Compostable Mailers</div>
+              <p style="font-size: 13.5px; color: var(--text-secondary);">Zero virgin plastic packaging used in our worldwide dispatch operations.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Journey Timeline -->
+    <section class="section-spacing">
+      <div class="container" style="max-width: 800px;">
+        <div style="text-align: center; margin-bottom: 56px;">
+          <span class="pill-tag" style="margin-bottom: 12px;">Evolution</span>
+          <h2 style="font-weight: 300;">The SecondStyle Chronicle</h2>
+        </div>
+
+        <div style="position: relative; border-left: 1px solid var(--border-strong); padding-left: 32px; margin-left: 20px; display: flex; flex-direction: column; gap: 48px;">
+          
+          <!-- Milestone 1 -->
+          <div style="position: relative;">
+            <div style="position: absolute; left: -40px; top: 0; width: 16px; height: 16px; border-radius: 50%; background: var(--bg-surface); border: 2px solid var(--accent-gold);"></div>
+            <span class="pill-tag" style="margin-bottom: 8px; font-size: 10px;">2023 : Inception</span>
+            <h3 style="font-size: 1.25rem; font-weight: 400; margin-bottom: 8px;">Archival Expeditions</h3>
+            <p style="font-size: 14px; line-height: 1.8; color: var(--text-secondary);">
+              Started as an underground collector network sourcing rare Japanese workwear and European vintage outerwear. Every piece was archived with its historical manufacture dates.
+            </p>
+          </div>
+
+          <!-- Milestone 2 -->
+          <div style="position: relative;">
+            <div style="position: absolute; left: -40px; top: 0; width: 16px; height: 16px; border-radius: 50%; background: var(--bg-surface); border: 2px solid var(--accent-gold);"></div>
+            <span class="pill-tag" style="margin-bottom: 8px; font-size: 10px;">2024 : Authentication Protocol</span>
+            <h3 style="font-size: 1.25rem; font-weight: 400; margin-bottom: 8px;">The Multi-Point Standard</h3>
+            <p style="font-size: 14px; line-height: 1.8; color: var(--text-secondary);">
+              Established our proprietary condition grading matrix (A+, A, B) and steam conditioning facility in Jakarta, setting the benchmark for Indonesian preloved commerce.
+            </p>
+          </div>
+
+          <!-- Milestone 3 -->
+          <div style="position: relative;">
+            <div style="position: absolute; left: -40px; top: 0; width: 16px; height: 16px; border-radius: 50%; background: var(--bg-surface); border: 2px solid var(--accent-gold);"></div>
+            <span class="pill-tag" style="margin-bottom: 8px; font-size: 10px;">2025 : Circular Milestone</span>
+            <h3 style="font-size: 1.25rem; font-weight: 400; margin-bottom: 8px;">Community Recognition</h3>
+            <p style="font-size: 14px; line-height: 1.8; color: var(--text-secondary);">
+              Over 5,000 discerning patrons joined the SecondStyle archive circle, keeping high-caliber garments in perpetual aesthetic rotation.
+            </p>
+          </div>
+
+          <!-- Milestone 4 -->
+          <div style="position: relative;">
+            <div style="position: absolute; left: -40px; top: 0; width: 16px; height: 16px; border-radius: 50%; background: var(--accent-gold); border: 2px solid var(--accent-gold);"></div>
+            <span class="pill-tag tag-emerald" style="margin-bottom: 8px; font-size: 10px;">2026 : Digital Renaissance</span>
+            <h3 style="font-size: 1.25rem; font-weight: 400; margin-bottom: 8px;">Awwwards-Tier Digital Archival</h3>
+            <p style="font-size: 14px; line-height: 1.8; color: var(--text-secondary);">
+              Unveiling our high-performance interactive 3D digital storefront, marrying bespoke craftsmanship with seamless modern web engineering.
+            </p>
+          </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 56px;">
+          <a href="homepage.html" class="btn-luxury">
+            <span>Explore The Collection</span>
+            <span class="btn-icon">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Video Campaign Modal -->
+  <div class="modal-backdrop" id="video-modal">
+    <div class="modal-card" style="max-width: 800px; padding: 16px; background: #000000; color: #ffffff;">
+      <button class="modal-close" onclick="closeVideoModal()" style="background: rgba(255, 255, 255, 0.2); color: #ffffff; border: none;" aria-label="Close modal">&times;</button>
+      <div style="aspect-ratio: 16/9; width: 100%; background: #111; display: flex; align-items: center; justify-content: center; position: relative; border-radius: var(--radius-inner); overflow: hidden;">
+        <!-- Simulated High-End Fashion Reel Preview -->
+        <img src="img/model1.jpg" alt="Campaign model" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+        <div style="position: absolute; bottom: 20px; left: 24px; background: rgba(0, 0, 0, 0.75); backdrop-filter: blur(8px); padding: 8px 16px; border-radius: var(--radius-pill); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;">
+          SecondStyle 2026 Visual Campaign • Tokyo Night Session
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Editorial Footer -->
+  <footer style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); padding: 56px 0 28px 0; margin-top: 60px;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+      <div class="nav-brand">Second<span>Style</span></div>
+      <div style="font-size: 13px; color: var(--text-muted);">&copy; 2026 SecondStyle Archive. Verified circular commerce.</div>
+      <div style="display: flex; gap: 16px; font-size: 13px;">
+        <a href="index.html" class="nav-link" style="padding: 0;">Home</a>
+        <a href="homepage.html" class="nav-link" style="padding: 0;">Shop Archive</a>
+        <a href="cart.html" class="nav-link" style="padding: 0;">Bag</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/store.js"></script>
+  <script>
+    function openVideoModal() {
+      document.getElementById('video-modal').classList.add('active');
+    }
+
+    function closeVideoModal() {
+      document.getElementById('video-modal').classList.remove('active');
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeVideoModal();
+    });
+  </script>
 </body>
-
 </html>
