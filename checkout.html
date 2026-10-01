@@ -1,146 +1,380 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <title>Checkout - SecondStyle</title>
-    <link href="src/output.css" rel="stylesheet" />
-    <script src="https://unpkg.com/feather-icons"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — SecondStyle Archive</title>
+  <meta name="description" content="Complete your authenticated preloved fashion purchase with secure encrypted checkout.">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+<body>
 
-<body class="bg-[#e6f2f0] min-h-screen flex flex-col">
-    <header class="flex justify-between items-center px-12 py-6 bg-[#e6f2f0]">
-        <img src="img/second.png" alt="SecondStyle Logo" class="h-12" />
-        <nav class="flex items-center gap-8 font-semibold text-black">
-            <a href="index.html">Home</a>
-            <a href="aboutus.html">About Us</a>
-            <a href="homepage.html">Shop</a>
-            <div class="flex gap-4 text-xl">
-                <a href="profile.html"><i data-feather="user"></i></a>
-                <a href="cart.html"><i data-feather="shopping-cart"></i></a>
-            </div>
-        </nav>
+  <!-- Floating Luxury Navigation -->
+  <div class="nav-wrapper">
+    <header class="floating-nav">
+      <a href="index.html" class="nav-brand">
+        Second<span>Style</span>
+      </a>
+
+      <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); display: flex; align-items: center; gap: 8px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        <span>256-Bit Encrypted Checkout</span>
+      </div>
+
+      <a href="cart.html" class="icon-btn" aria-label="Return to Bag">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+      </a>
     </header>
+  </div>
 
-    <main class="px-8 py-16 flex-grow max-w-4xl mx-auto bg-white rounded-lg shadow">
-        <h2 class="text-3xl font-semibold mb-6 text-center">Checkout</h2>
-        <form id="checkout-form" class="space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                    <label class="block text-sm font-semibold mb-1">Full Name</label>
-                    <input type="text" class="w-full border border-gray-300 p-2 rounded" required>
-                </div>
-                <div>
-                    <label class="block text-sm font-semibold mb-1">Email Address</label>
-                    <input type="email" class="w-full border border-gray-300 p-2 rounded" required>
-                </div>
-            </div>
-            <div>
-                <label class="block text-sm font-semibold mb-1">Shipping Address</label>
-                <textarea class="w-full border border-gray-300 p-2 rounded" rows="3" required></textarea>
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-                <div>
-                    <label class="block text-sm font-semibold mb-1">City</label>
-                    <input type="text" class="w-full border border-gray-300 p-2 rounded" required>
-                </div>
-                <div>
-                    <label class="block text-sm font-semibold mb-1">Postal Code</label>
-                    <input type="text" class="w-full border border-gray-300 p-2 rounded" required>
-                </div>
-            </div>
+  <main class="section-spacing" style="padding-top: 36px;">
+    <div class="container">
+      
+      <div style="margin-bottom: 32px;">
+        <span class="pill-tag" style="margin-bottom: 8px;">Final Step</span>
+        <h1 style="font-weight: 300; font-size: 2.2rem;">Complete Your Order</h1>
+      </div>
 
-            <!-- Ringkasan Pesanan -->
-            <div id="order-summary" class="mt-6 border-t pt-4 text-sm text-gray-700"></div>
+      <form id="checkout-form" onsubmit="handleOrderSubmit(event)">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; align-items: start;">
+          
+          <!-- Left Column: Shipping & Payment Details -->
+          <div>
+            
+            <!-- Section 1: Customer Contact -->
+            <div class="bezel-card" style="padding: 6px; margin-bottom: 24px;">
+              <div class="bezel-card-inner" style="padding: 28px;">
+                <h3 style="font-size: 1.15rem; font-weight: 400; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                  <span style="width: 24px; height: 24px; border-radius: 50%; background: var(--bg-elevated); font-size: 12px; display: flex; align-items: center; justify-content: center;">1</span>
+                  Customer Information
+                </h3>
 
-            <!-- Metode Pembayaran -->
-            <div>
-                <label class="block text-sm font-semibold mb-1">Payment Method</label>
-                <select class="w-full border border-gray-300 p-2 rounded" required>
-                    <option value="">-- Select Payment --</option>
-                    <option>Bank Transfer</option>
-                    <option>OVO / Gopay</option>
-                    <option>DANA</option>
-                    <option>Credit Card</option>
-                </select>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+                  <div class="form-group">
+                    <label class="form-label" for="full-name">Full Name *</label>
+                    <input type="text" id="full-name" required class="form-input" placeholder="e.g. Narendra Bintang">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="email-address">Email Address *</label>
+                    <input type="email" id="email-address" required class="form-input" placeholder="bintang@example.com">
+                  </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label class="form-label" for="phone-number">Phone Number (WhatsApp) *</label>
+                  <input type="tel" id="phone-number" required class="form-input" placeholder="+62 812 3456 7890">
+                </div>
+              </div>
             </div>
 
-            <div class="text-right">
-                <button type="submit"
-                    class="bg-black text-white px-6 py-2 rounded-lg shadow hover:bg-gray-800 transition text-sm font-semibold">
-                    Place Order
+            <!-- Section 2: Delivery Destination -->
+            <div class="bezel-card" style="padding: 6px; margin-bottom: 24px;">
+              <div class="bezel-card-inner" style="padding: 28px;">
+                <h3 style="font-size: 1.15rem; font-weight: 400; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                  <span style="width: 24px; height: 24px; border-radius: 50%; background: var(--bg-elevated); font-size: 12px; display: flex; align-items: center; justify-content: center;">2</span>
+                  Shipping Address
+                </h3>
+
+                <div class="form-group">
+                  <label class="form-label" for="street-address">Street Address & Apartment *</label>
+                  <textarea id="street-address" required class="form-textarea" placeholder="Street name, house/suite number, landmark"></textarea>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px;">
+                  <div class="form-group" style="margin-bottom: 0;">
+                    <label class="form-label" for="city">City / Region *</label>
+                    <input type="text" id="city" required class="form-input" placeholder="e.g. Jakarta Selatan">
+                  </div>
+                  <div class="form-group" style="margin-bottom: 0;">
+                    <label class="form-label" for="postal-code">Postal Code *</label>
+                    <input type="text" id="postal-code" required class="form-input" placeholder="12160">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 3: Visual Payment Selector -->
+            <div class="bezel-card" style="padding: 6px;">
+              <div class="bezel-card-inner" style="padding: 28px;">
+                <h3 style="font-size: 1.15rem; font-weight: 400; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                  <span style="width: 24px; height: 24px; border-radius: 50%; background: var(--bg-elevated); font-size: 12px; display: flex; align-items: center; justify-content: center;">3</span>
+                  Payment Gateway
+                </h3>
+
+                <!-- Payment Tabs -->
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px;" id="payment-tabs">
+                  <button type="button" class="pill-tag active-tab" data-method="qris" style="cursor: pointer; padding: 12px 8px; justify-content: center; background: var(--bg-dark); color: #ffffff; border-color: transparent;">
+                    QRIS / E-Wallet
+                  </button>
+                  <button type="button" class="pill-tag" data-method="va" style="cursor: pointer; padding: 12px 8px; justify-content: center; background: transparent; color: var(--text-secondary);">
+                    Virtual Account
+                  </button>
+                  <button type="button" class="pill-tag" data-method="card" style="cursor: pointer; padding: 12px 8px; justify-content: center; background: transparent; color: var(--text-secondary);">
+                    Credit Card
+                  </button>
+                </div>
+
+                <!-- Payment Details View: QRIS -->
+                <div id="payment-view-qris" style="text-align: center; padding: 16px; background: var(--bg-elevated); border-radius: var(--radius-inner); margin-bottom: 12px;">
+                  <div style="font-size: 13px; font-weight: 400; margin-bottom: 8px;">Scan with GoPay, OVO, Dana, ShopeePay or BCA Mobile</div>
+                  <div style="width: 140px; height: 140px; margin: 12px auto; background: #ffffff; padding: 10px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: center;">
+                    <!-- Simulated Clean QR Code Graphic -->
+                    <svg width="110" height="110" viewBox="0 0 100 100" fill="currentColor">
+                      <rect x="0" y="0" width="30" height="30" fill="#121418"/>
+                      <rect x="6" y="6" width="18" height="18" fill="#ffffff"/>
+                      <rect x="10" y="10" width="10" height="10" fill="#121418"/>
+                      <rect x="70" y="0" width="30" height="30" fill="#121418"/>
+                      <rect x="76" y="6" width="18" height="18" fill="#ffffff"/>
+                      <rect x="80" y="10" width="10" height="10" fill="#121418"/>
+                      <rect x="0" y="70" width="30" height="30" fill="#121418"/>
+                      <rect x="6" y="76" width="18" height="18" fill="#ffffff"/>
+                      <rect x="10" y="80" width="10" height="10" fill="#121418"/>
+                      <rect x="40" y="10" width="10" height="10" fill="#121418"/>
+                      <rect x="50" y="30" width="20" height="10" fill="#121418"/>
+                      <rect x="40" y="50" width="30" height="10" fill="#121418"/>
+                      <rect x="70" y="70" width="20" height="20" fill="#121418"/>
+                    </svg>
+                  </div>
+                  <span class="pill-tag tag-emerald" style="font-size: 10px;">Zero Transaction Fee</span>
+                </div>
+
+                <!-- Payment Details View: VA -->
+                <div id="payment-view-va" style="display: none; padding: 16px; background: var(--bg-elevated); border-radius: var(--radius-inner); margin-bottom: 12px;">
+                  <div class="form-group">
+                    <label class="form-label">Select Bank Destination</label>
+                    <select class="form-select" id="va-bank-select">
+                      <option value="BCA">BCA Virtual Account (80777-08123456789)</option>
+                      <option value="Mandiri">Mandiri Virtual Account (88908-08123456789)</option>
+                      <option value="BNI">BNI Virtual Account (98812-08123456789)</option>
+                    </select>
+                  </div>
+                  <p style="font-size: 12.5px; color: var(--text-secondary);">Virtual Account number will be automatically generated and verified upon submission.</p>
+                </div>
+
+                <!-- Payment Details View: Card -->
+                <div id="payment-view-card" style="display: none; padding: 16px; background: var(--bg-elevated); border-radius: var(--radius-inner); margin-bottom: 12px;">
+                  <div class="form-group">
+                    <label class="form-label">Card Number</label>
+                    <input type="text" placeholder="4123 4567 8910 1112" class="form-input">
+                  </div>
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                    <div class="form-group">
+                      <label class="form-label">Valid Thru</label>
+                      <input type="text" placeholder="MM/YY" class="form-input">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">CVV</label>
+                      <input type="password" maxlength="4" placeholder="123" class="form-input">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Live Order Summary -->
+          <div style="position: sticky; top: 100px;">
+            <div class="bezel-card" style="padding: 6px;">
+              <div class="bezel-card-inner" style="padding: 28px;">
+                
+                <h3 style="font-size: 1.15rem; font-weight: 400; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle);">
+                  Reviewing Order Items
+                </h3>
+
+                <!-- Items mini list -->
+                <div id="checkout-items-list" style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; max-height: 280px; overflow-y: auto;">
+                  <!-- Dynamic items -->
+                </div>
+
+                <!-- Cost Calculation Breakdown -->
+                <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13.5px; border-top: 1px solid var(--border-subtle); padding-top: 16px; margin-bottom: 20px;">
+                  <div style="display: flex; justify-content: space-between;">
+                    <span style="color: var(--text-secondary);">Subtotal</span>
+                    <span id="co-subtotal" style="font-weight: 400;">Rp 0</span>
+                  </div>
+                  <div id="co-discount-row" style="display: none; justify-content: space-between; color: var(--accent-emerald);">
+                    <span>Anniversary Discount (25%)</span>
+                    <span id="co-discount">-Rp 0</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between;">
+                    <span style="color: var(--text-secondary);">Insured Shipping</span>
+                    <span id="co-shipping" style="font-weight: 400;">Rp 0</span>
+                  </div>
+                </div>
+
+                <div style="border-top: 1px solid var(--border-subtle); padding-top: 16px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: baseline;">
+                  <span style="font-size: 15px; font-weight: 400;">Total Payable</span>
+                  <span id="co-total" style="font-size: 1.6rem; font-weight: 400; color: var(--text-primary);">Rp 0</span>
+                </div>
+
+                <button type="submit" class="btn-luxury" style="width: 100%; justify-content: center; gap: 12px;">
+                  <span>Authorize & Place Order</span>
+                  <span class="btn-icon">&rarr;</span>
                 </button>
+
+                <p style="font-size: 11.5px; line-height: 1.6; text-align: center; color: var(--text-muted); margin-top: 14px;">
+                  By authorizing this order, you confirm acceptance of SecondStyle preloved terms and condition rating.
+                </p>
+
+              </div>
             </div>
-        </form>
-    </main>
+          </div>
 
-    <footer
-        class="bg-white px-12 py-10 flex flex-col md:flex-row justify-between gap-6 border-t-2 border-gray-300 text-sm mt-12">
-        <div class="flex flex-col gap-2 text-black">
-            <a href="#">Contact Us</a><a href="#">Size Guide</a><a href="#">How To Shop</a><a href="#">FAQ</a><a
-                href="#">Return Policy</a>
         </div>
-        <div class="flex flex-col items-center">
-            <div class="w-16 h-1 bg-black mb-3"></div>
-            <a href="#">Terms & Condition</a><a href="#">Terms Of Service</a><a href="#">Refund Policy</a><a
-                href="#">Order Confirmation</a>
-        </div>
-        <div class="flex flex-col gap-2 text-black">
-            <a href="#">📱 Whatsapp</a><a href="#">📸 Instagram</a><a href="#">💬 Telegram</a><a href="#">🎵 Tiktok</a>
-            <p class="mt-3">© 2025, SecondStyle / <a href="#" class="underline">Daily Wear</a></p>
-            <img src="img/second.png" alt="SecondStyle Logo" class="h-8 mt-2" />
-        </div>
-    </footer>
+      </form>
 
-    <script>
-        feather.replace();
+    </div>
+  </main>
 
-        const summaryEl = document.getElementById("order-summary");
-        const form = document.getElementById("checkout-form");
+  <!-- Editorial Footer -->
+  <footer style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); padding: 48px 0 24px 0; margin-top: 60px;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 12px; color: var(--text-muted);">
+      <div class="nav-brand" style="font-size: 1rem;">Second<span>Style</span></div>
+      <div>&copy; 2026 SecondStyle Archive. Verified circular commerce.</div>
+    </div>
+  </footer>
 
-        const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-        const buyNowItem = JSON.parse(localStorage.getItem("buyNowItem"));
+  <!-- Scripts -->
+  <script src="js/store.js"></script>
+  <script>
+    let checkoutItems = [];
+    let checkoutSubtotal = 0;
+    let checkoutDiscount = 0;
+    let checkoutShipping = 0;
+    let checkoutTotal = 0;
+    let selectedPaymentMethod = 'QRIS / E-Wallet';
 
-        // Tentukan data mana yang dipakai
-        let items = [];
-        if (buyNowItem) {
-            items = [{ ...buyNowItem, quantity: 1 }];
-        } else if (cartItems.length > 0) {
-            items = cartItems;
-        }
+    function initCheckout() {
+      // Pre-fill user data if available
+      const user = window.SecondStyleStore.getCurrentUser();
+      if (user) {
+        if (user.name) document.getElementById('full-name').value = user.name;
+        if (user.email) document.getElementById('email-address').value = user.email;
+        if (user.phone) document.getElementById('phone-number').value = user.phone;
+        if (user.address) document.getElementById('street-address').value = user.address;
+        if (user.city) document.getElementById('city').value = user.city;
+        if (user.postalCode) document.getElementById('postal-code').value = user.postalCode;
+      }
 
-        // Tampilkan ringkasan
-        if (items.length === 0) {
-            summaryEl.innerHTML = "<p class='text-red-500'>Your cart is empty.</p>";
-        } else {
-            let html = `<h3 class="font-semibold mb-2">Order Summary:</h3><ul class="space-y-1">`;
-            let total = 0;
-            items.forEach(item => {
-                const itemTotal = item.price * item.quantity;
-                html += `<li>${item.title} × ${item.quantity} - $${itemTotal.toFixed(2)}</li>`;
-                total += itemTotal;
-            });
-            html += `</ul><p class="mt-3 font-bold">Total: $${total.toFixed(2)}</p>`;
-            summaryEl.innerHTML = html;
-        }
+      // Check if this is a "Buy Now" flow or a Cart flow
+      const buyNowItem = JSON.parse(localStorage.getItem(window.SecondStyleStore.STORAGE_KEYS.BUY_NOW));
+      const promo = window.SecondStyleStore.getPromo();
 
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-            if (items.length === 0) {
-                alert("Cart is empty!");
-                return;
-            }
+      if (buyNowItem) {
+        checkoutItems = [buyNowItem];
+        checkoutSubtotal = buyNowItem.price * buyNowItem.quantity;
+      } else {
+        checkoutItems = window.SecondStyleStore.getCart();
+        const totals = window.SecondStyleStore.getCartTotals();
+        checkoutSubtotal = totals.subtotal;
+      }
 
-            alert("Payment successful! Your order has been placed.");
+      if (checkoutItems.length === 0) {
+        alert('Your shopping bag is empty. Redirecting to archive shop.');
+        window.location.href = 'homepage.html';
+        return;
+      }
 
-            // Kosongkan data
-            localStorage.removeItem("cart");
-            localStorage.removeItem("buyNowItem");
+      // Calculate discount if coupon active
+      if (promo && promo.discountPercent) {
+        checkoutDiscount = checkoutSubtotal * (promo.discountPercent / 100);
+      }
 
-            window.location.href = "homepage.html";
+      // Free shipping threshold check (Rp 500.000)
+      checkoutShipping = checkoutSubtotal >= 500000 ? 0 : 35000;
+      checkoutTotal = Math.max(0, checkoutSubtotal - checkoutDiscount + checkoutShipping);
+
+      // Render Items List
+      const itemsContainer = document.getElementById('checkout-items-list');
+      itemsContainer.innerHTML = '';
+      checkoutItems.forEach(item => {
+        const row = document.createElement('div');
+        row.style.display = 'flex';
+        row.style.gap = '12px';
+        row.style.alignItems = 'center';
+        row.innerHTML = `
+          <div style="width: 52px; height: 52px; background: #f4f3ef; border-radius: var(--radius-sm); padding: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <img src="${item.image}" alt="${item.title}" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+          </div>
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 13.5px; font-weight: 400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${item.title}</div>
+            <div style="font-size: 12px; color: var(--text-muted);">Size ${item.size} • Qty ${item.quantity}</div>
+          </div>
+          <div style="font-size: 13.5px; font-weight: 400;">
+            ${window.SecondStyleStore.formatCurrency(item.price * item.quantity)}
+          </div>
+        `;
+        itemsContainer.appendChild(row);
+      });
+
+      // Update Summary Numbers
+      document.getElementById('co-subtotal').textContent = window.SecondStyleStore.formatCurrency(checkoutSubtotal);
+      if (checkoutDiscount > 0) {
+        document.getElementById('co-discount-row').style.display = 'flex';
+        document.getElementById('co-discount').textContent = `-${window.SecondStyleStore.formatCurrency(checkoutDiscount)}`;
+      }
+      document.getElementById('co-shipping').textContent = checkoutShipping === 0 ? 'Complimentary' : window.SecondStyleStore.formatCurrency(checkoutShipping);
+      document.getElementById('co-total').textContent = window.SecondStyleStore.formatCurrency(checkoutTotal);
+
+      // Payment Tab Selectors
+      const tabs = document.querySelectorAll('#payment-tabs button');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => {
+            t.style.background = 'transparent';
+            t.style.color = 'var(--text-secondary)';
+            t.style.borderColor = 'rgba(191, 161, 117, 0.25)';
+          });
+          tab.style.background = 'var(--bg-dark)';
+          tab.style.color = '#ffffff';
+          tab.style.borderColor = 'transparent';
+
+          const method = tab.dataset.method;
+          document.getElementById('payment-view-qris').style.display = method === 'qris' ? 'block' : 'none';
+          document.getElementById('payment-view-va').style.display = method === 'va' ? 'block' : 'none';
+          document.getElementById('payment-view-card').style.display = method === 'card' ? 'block' : 'none';
+
+          if (method === 'qris') selectedPaymentMethod = 'QRIS / E-Wallet';
+          if (method === 'va') selectedPaymentMethod = 'Bank Transfer (' + document.getElementById('va-bank-select').value + ')';
+          if (method === 'card') selectedPaymentMethod = 'Credit / Debit Card';
         });
-    </script>
-    
-</body>
+      });
+    }
 
+    function handleOrderSubmit(e) {
+      e.preventDefault();
+
+      const fullName = document.getElementById('full-name').value.trim();
+      const email = document.getElementById('email-address').value.trim();
+      const phone = document.getElementById('phone-number').value.trim();
+      const street = document.getElementById('street-address').value.trim();
+      const city = document.getElementById('city').value.trim();
+      const postal = document.getElementById('postal-code').value.trim();
+
+      const fullAddress = `${street}, ${city}, ${postal}`;
+
+      const orderData = {
+        customerName: fullName,
+        customerEmail: email,
+        customerPhone: phone,
+        shippingAddress: fullAddress,
+        items: checkoutItems,
+        subtotal: checkoutSubtotal,
+        discount: checkoutDiscount,
+        shipping: checkoutShipping,
+        total: checkoutTotal,
+        paymentMethod: selectedPaymentMethod
+      };
+
+      const placedOrder = window.SecondStyleStore.createOrder(orderData);
+      window.location.href = `thankyou.html?orderId=${placedOrder.orderId}`;
+    }
+
+    document.addEventListener('DOMContentLoaded', initCheckout);
+  </script>
+</body>
 </html>
